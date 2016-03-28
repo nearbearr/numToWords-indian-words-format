@@ -1,4 +1,4 @@
-/*! numToWords.js v1.0.0-beta1 | developed by prathamesh_satya | use and share :) */
+/*! numToWords.js v1.0.0-beta1 | (c) prathamesh_satya | use and share :) */
 /* to use: 1. import numToWords.js file
           2. assign an id to the text field
          3. make a div id='container'
