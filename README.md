@@ -1,5 +1,5 @@
 # numToWords-indian-words-format
-js function to convert positive integer numbers to Indian words format | number length &lt; 9 (Ten crores)
+js function to convert positive integer numbers to Indian words format | number length &lt; 11 (Hundred crores)
 
 
 /* to use: 
