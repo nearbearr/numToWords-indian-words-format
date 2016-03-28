@@ -13,12 +13,12 @@ function numToWords(id) {
     numlength=numstring.length;                                                  //store length of string
     var returnstring, bufferstring;                                              //final string to be returned
 
-    if(Number(numvalue)>=0){}                                                    
+    if(Number(numvalue)>=0){}
     else {
       window.alert("Incorrect input type");
       return false;
     }
-    if(numlength>9){
+    if(numlength>10){
       window.alert("Number out of bounds");
       return false;
     }
@@ -27,23 +27,25 @@ var onesplace = ['Zero', ' One', ' Two', ' Three', ' Four', ' Five', ' Six', ' S
 var tensplace = ['Ten', ' Eleven', ' Twelve', ' Thirteen', ' Fourteen', ' Fifteen', ' Sixteen', ' Seventeen', ' Eighteen', ' Nineteen'];
 var perfecttens = ['','','Twenty', ' Thirty', ' Forty', ' Fifty', ' Sixty', ' Seventy', ' Eighty', ' Ninety'];
 
+//ones place
   if(numlength>0){
       returnstring = onesplace[revnumstring.charAt(0)];
-
+//tens place
       if(numlength>1){
         if(revnumstring.charAt(1)==0){returnstring= returnstring.replace("Zero", "");}
         else{ twodigit(numlength-2); }
-
+      }
+//hundred
       if(numlength>2){
         if(revnumstring.charAt(2)==0){returnstring= returnstring.replace("Zero", "");}
         else{ returnstring = onesplace[revnumstring.charAt(2)] + ' Hundred ' + returnstring; }
         }
-
+//thousand
       if(numlength>3){
         if(revnumstring.charAt(3)==0){returnstring= returnstring.replace("Zero", "");}
         else{ returnstring = onesplace[revnumstring.charAt(3)] + ' Thousand ' + returnstring; }
       }
-
+//ten thousand
       if(numlength>4){
         if(revnumstring.charAt(4)==0){returnstring= returnstring.replace("Zero", "");}
         else{ bufferstring = returnstring;
@@ -52,14 +54,14 @@ var perfecttens = ['','','Twenty', ' Thirty', ' Forty', ' Fifty', ' Sixty', ' Se
               twodigit(numlength-5);
               returnstring = returnstring + ' Thousand ' + bufferstring; }
       }
-
+//lakh
       if(numlength>5){
         if(revnumstring.charAt(5)==0){returnstring= returnstring.replace("Zero", "");}
         else{ if(revnumstring.charAt(5)==1){ returnstring = 'One Lakh ' + returnstring; }
               else{ returnstring = onesplace[revnumstring.charAt(5)] + ' Lakhs ' + returnstring;}
             }
       }
-
+//ten lakhs
       if(numlength>6){
         if(revnumstring.charAt(6)==0){returnstring= returnstring.replace("Zero", "");}
         else{ bufferstring = returnstring;
@@ -69,14 +71,14 @@ var perfecttens = ['','','Twenty', ' Thirty', ' Forty', ' Fifty', ' Sixty', ' Se
               twodigit(numlength-7);
               returnstring = returnstring + ' Lakhs ' + bufferstring; }
       }
-
+//crore
       if(numlength>7){
         if(revnumstring.charAt(7)==0){returnstring= returnstring.replace("Zero", "");}
         else{ if(revnumstring.charAt(7)==1){ returnstring = 'One Crore ' + returnstring; }
               else{ returnstring = onesplace[revnumstring.charAt(7)] + ' Crores ' + returnstring;}
             }
       }
-
+//ten crores
       if(numlength>8){
         if(revnumstring.charAt(8)==0){returnstring= returnstring.replace("Zero", "");}
         else{ bufferstring = returnstring;
@@ -86,6 +88,10 @@ var perfecttens = ['','','Twenty', ' Thirty', ' Forty', ' Fifty', ' Sixty', ' Se
               twodigit(numlength-9);
               returnstring = returnstring + ' Crores ' + bufferstring; }
       }
+//hundred crores
+      if(numlength>9){
+        if(revnumstring.charAt(8)==0 && revnumstring.charAt(7)==0){ returnstring = onesplace[revnumstring.charAt(9)] + ' Hundred Crores ' + returnstring; }
+        else{ returnstring = onesplace[revnumstring.charAt(9)] + ' Hundred ' + returnstring; }
       }
   }
 
