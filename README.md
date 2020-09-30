@@ -1,6 +1,6 @@
 # numToWords-indian-words-format
 js function to convert positive integer numbers to Indian words format | number length &lt; 11 (Hundred crores)
-
+Increase length >11
 
 /* to use: 
 1. import numToWords.js file
